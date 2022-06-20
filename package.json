@@ -1,0 +1,20 @@
+{
+  "name": "bank-tech-test",
+  "version": "1.0.0",
+  "description": "![diagram](public/images/diagram.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/S-Spiegl/bank-tech-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/S-Spiegl/bank-tech-test/issues"
+  },
+  "homepage": "https://github.com/S-Spiegl/bank-tech-test#readme"
+}

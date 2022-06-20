@@ -18,9 +18,23 @@ describe('Bank', () => {
     //   expect(bank.printStatement()).toEqual(0)
     // });
 
-    it('stores the deposit/withdrawal along with the balance', () => {
+    // it('stores the deposit, the withdrawal and the balance', () => {
+    //   bank.deposit(10)
+    //   expect(bank.printStatement()).toEqual([10, 0, 10])
+    // })    
+
+    it('augments the account by the amount deposited', () => {
       bank.deposit(10)
-      expect(bank.printStatement()).toEqual([10, 0, 10])
-    })    
+      bank.deposit(10)
+      expect(bank.account).toEqual([[10, 0], [10, 0]])
+    })
+
+    describe('.printStatement', () => {
+      it('stores two deposits/withdrawals', () => {
+        bank.deposit(10)
+        bank.deposit(10)
+        expect(bank.printStatement()).toEqual([[10, 0, 10], [10, 0, 20]])
+      })
+    })
   })
 })

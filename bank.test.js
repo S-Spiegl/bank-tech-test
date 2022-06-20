@@ -6,17 +6,21 @@ describe('Bank', () => {
     bank = new Bank();
   })
 
-  describe('.deposit', () => {
-    it('adds funds to the account', () => {
-      bank.deposit(10)
-      expect(bank.printStatement()).toEqual(10)
-  });
+    describe('.deposit', () => {
+    //   it('adds funds to the account', () => {
+    //     bank.deposit(10)
+    //     expect(bank.printStatement()).toEqual(10)
+    // });
 
-  it('withdraws funds from the account', () => {
-    bank.deposit(10)
-    bank.withdraw(10)
-    expect(bank.printStatement()).toEqual(0)
-});
-    
+    // it('withdraws funds from the account', () => {
+    //   bank.deposit(10)
+    //   bank.withdraw(10)
+    //   expect(bank.printStatement()).toEqual(0)
+    // });
+
+    it('stores the deposit/withdrawal along with the balance', () => {
+      bank.deposit(10)
+      expect(bank.printStatement()).toEqual([10, 0, 10])
+    })    
   })
 })

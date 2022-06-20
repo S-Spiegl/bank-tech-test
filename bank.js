@@ -1,15 +1,22 @@
 class Bank {
 
   constructor() {
-    this.account = 0
+    this.account = [] 
   }
 
   deposit(funds) {
-    this.account += funds
+    this.account.push(funds)
+    this.account.push(0)
+    this.account.push(funds)
+    
   }
 
   withdraw(funds) {
-    this.account -= funds
+    this.account.push(0)
+    this.account.push(funds)
+    this.account.push(0)
+
+    
   }
 
   printStatement() {

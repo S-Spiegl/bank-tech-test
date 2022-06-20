@@ -8,6 +8,10 @@ class Bank {
     this.account += funds
   }
 
+  withdraw(funds) {
+    this.account -= funds
+  }
+
   printStatement() {
    return this.account
   }

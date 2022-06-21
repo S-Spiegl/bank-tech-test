@@ -1,6 +1,8 @@
 # bank-tech-test
 #diagrams 
 ![diagram](public/images/diagram.png)
+![screenshot1](public/images/bank-tech-test-screenshot1.png)
+![screenshot2](public/images/bank-tech-test-screenshot2.png)
 
 Instructions:
 A user can use the program to deposit or withdraw money to/from a bank account. You cannot withdraw more than you have in the account. 
@@ -9,7 +11,7 @@ To run the program, run the following in the terminal inside the program folder:
 npm install
 
 Then enter the following in node:
-const Bank = require('./bank')
+const Bank = require('./Bank')
 const bank = new Bank
 
 Now you can add money, withdraw money and view a statement.

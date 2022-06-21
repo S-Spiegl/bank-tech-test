@@ -3,13 +3,23 @@
 ![diagram](public/images/diagram.png)
 
 Instructions:
-A user can use the program to deposit or withdraw money to/from a bank account. You cannot withdraw more than you have in the account. To run the program, run the following in node:
+A user can use the program to deposit or withdraw money to/from a bank account. You cannot withdraw more than you have in the account. 
+
+To run the program, run the following in the terminal inside the program folder:
+npm install
+
+Then enter the following in node:
 const Bank = require('./bank')
 const bank = new Bank
+
+Now you can add money, withdraw money and view a statement.
+
 Add money using bank.deposit(funds)
 e.g. bank.deposit(100)
+
 Withdraw money using bank.withdraw(funds)
 e.g. bank.withdraw(100)
+
 print a statement using the printStatementWithDate() function,
 e.g. bank.statement.printStatementWithDate() 
 

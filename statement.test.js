@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const Statement = require('./statement');
 const Account = require('./account');
 

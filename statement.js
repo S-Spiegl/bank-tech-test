@@ -10,7 +10,7 @@ class Statement {
     this.header = 'date || deposit || withdrawal || balance';
   }
 
-  generateStatement() {
+  generateStatementWithoutDate() {
     // for the first array, initialize the balance to the value of the deposit
     for (let i = 0; i < 1; i++) {
       const deposit = this.account.balance[i][0];
@@ -18,7 +18,7 @@ class Statement {
         this.account.balance[i].push(deposit);
       }
     }
-    // thereafter, get the balance by adding the deposit to the previous balance or by subtracting 
+    // thereafter, get the balance by adding the deposit to the previous balance or by subtracting
     // the withdrawal from previous balance
     for (let i = 1; i < this.account.balance.length; i++) {
       const deposit = this.account.balance[i][0];
@@ -31,7 +31,7 @@ class Statement {
   }
 
   printStatementWithDate() {
-    this.generateStatement();
+    this.generateStatementWithoutDate();
     const figuresToTwoDecimals = this.account.balance.map((a) => a.map((b) => b.toFixed(2)));
     const balanceWithoutDate = figuresToTwoDecimals.map((a) => a.join(' || ').split());
     balanceWithoutDate.map((a) => a.unshift(this.todaysDate));
@@ -42,5 +42,3 @@ class Statement {
 }
 
 module.exports = Statement;
-
-// regex out the \n

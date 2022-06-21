@@ -10,6 +10,7 @@ class Account {
   withdraw(funds) {
     this.balance.push([0, funds])
   }
+
 }
 
 module.exports = Account;

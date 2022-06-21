@@ -10,7 +10,7 @@ class Statement {
   printHeader() {
     return 'date || deposit || withdrawal || balance'
   }
-
+  
   printStatement() {
     //for the first array, initialize the balance whatever the deposit is 
     for  (let i = 0; i < 1; i++) {
@@ -28,24 +28,23 @@ class Statement {
         this.account.balance[i].push(previousBalance+deposit-withdrawal)}
     }
 
-    const output = this.account.balance.map (a => a
+    const balanceWithoutDate = this.account.balance.map (a => a
       .join(' || ')
       .split()
-      // .join()
       )
 
-      output.map (a => a
-        .unshift('hello')
+      balanceWithoutDate.map (a => a
+        .unshift(this.todaysDate)
         )
 
-      output.map (a => a
-        .join()
-        )
-    
-      return output
+      const balanceWithDate = balanceWithoutDate.map (a => a.join(' || '))
+
+      balanceWithDate.unshift('date || deposit || withdrawal || balance')
+  
+      return balanceWithDate
   }
 
-  printStatementWithHeader() {
+  printStatementWithHeader(input) {
     return 'test'
   }
 }

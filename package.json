@@ -4,7 +4,8 @@
   "description": "![diagram](public/images/diagram.png)",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint ./ --fix"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/S-Spiegl/bank-tech-test/issues"
   },
-  "homepage": "https://github.com/S-Spiegl/bank-tech-test#readme"
+  "homepage": "https://github.com/S-Spiegl/bank-tech-test#readme",
+  "devDependencies": {
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
 }

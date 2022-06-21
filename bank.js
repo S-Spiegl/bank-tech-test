@@ -5,6 +5,7 @@ class Bank {
 
   constructor() {
     //the account is created in bank and injected into the statement
+
     //I cannot call this.statement from within a method in bank. I can call it with e.g. bank.statement.printHeader() in node, but  
     //if I try to wrap that method in a bank function, 
     //e.g. 
@@ -24,15 +25,6 @@ class Bank {
   withdraw(funds) {
     this.account.withdraw(funds)
   }
-
-  printStatement() {
-    return this.test
-  }
-
-  // printStatementWithHeader() {
-  //   this.statement.printHeader();
-  //   this.statement.printStatement();
-  // }
 }
 
 module.exports = Bank;

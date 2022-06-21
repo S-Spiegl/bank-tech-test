@@ -5,14 +5,11 @@ class Statement {
     this.account = account
     this.date = new Date() 
     this.todaysDate = `${this.date.getDate()}-${this.date.getMonth()}-${this.date.getFullYear()}`
+    this.header = 'date || deposit || withdrawal || balance'
   }
-
-  printHeader() {
-    return 'date || deposit || withdrawal || balance'
-  }
-  
-  printStatement() {
-    //for the first array, initialize the balance whatever the deposit is 
+ 
+  generateStatement() {
+    //for the first array, initialize the balance to the value of the deposit
     for  (let i = 0; i < 1; i++) {
       let deposit = this.account.balance[i][0]
       if(this.account.balance[i].length < 3){
@@ -27,26 +24,24 @@ class Statement {
       if(this.account.balance[i].length < 3){
         this.account.balance[i].push(previousBalance+deposit-withdrawal)}
     }
+  }
 
-    const balanceWithoutDate = this.account.balance.map (a => a
-      .join(' || ')
-      .split()
-      )
+    printStatementWithDate() {
 
-      balanceWithoutDate.map (a => a
-        .unshift(this.todaysDate)
-        )
+      this.generateStatement()
+
+      const balanceWithoutDate = this.account.balance.map (a => a.join(' || ').split())
+
+        balanceWithoutDate.map (a => a.unshift(this.todaysDate))
 
       const balanceWithDate = balanceWithoutDate.map (a => a.join(' || '))
 
-      balanceWithDate.unshift('date || deposit || withdrawal || balance')
-  
-      return balanceWithDate
-  }
-
-  printStatementWithHeader(input) {
-    return 'test'
-  }
+        balanceWithDate.unshift(this.header)
+    
+        return balanceWithDate.join('\n')
+    }
 }
 
 module.exports = Statement;
+
+//regex out the \n

@@ -4,7 +4,7 @@
 ![screenshot1](public/images/bank-tech-test-screenshot1.png)
 ![screenshot2](public/images/bank-tech-test-screenshot2.png)
 
-Instructions:
+**Instructions:**
 A user can use the program to deposit or withdraw money to/from a bank account. You cannot withdraw more than you have in the account. 
 
 To run the program, run the following in the terminal inside the program folder:
@@ -25,7 +25,7 @@ e.g. bank.withdraw(100)
 print a statement using the printStatementWithDate() function,
 e.g. bank.statement.printStatementWithDate() 
 
-#questions/notes for Eóin, with reference to the guidance: 
+**#questions/notes for Eóin, with reference to the guidance: **
 
 My ultimate plan was to have three classes, Bank, Statement and Account, with Account and Statement being created in the Bank constructor and Account being injected into Statement here, since it's necessary to calculate the statement. I managed this, but while I could wrap the ability to deposit or withdraw funds in a Bank function quite neatly, so that I could simply call bank.deposit(funds) and it would access and increment the account, I couldn't do the same for the statement. I had hoped to be able to simply write bank.printStatementWithDate() and have the following logic take place (I've shortened the code just to include the relevant method):
 
